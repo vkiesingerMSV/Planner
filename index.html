@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
+<title>Mein Tag</title>
+<meta name="theme-color" content="#8C84EA">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Mein Tag">
+<link rel="manifest" href="data:application/manifest+json;base64,eyJuYW1lIjogIk1laW4gVGFnIiwgInNob3J0X25hbWUiOiAiTWVpbiBUYWciLCAic3RhcnRfdXJsIjogIi4iLCAic2NvcGUiOiAiLiIsICJkaXNwbGF5IjogInN0YW5kYWxvbmUiLCAib3JpZW50YXRpb24iOiAicG9ydHJhaXQiLCAiYmFja2dyb3VuZF9jb2xvciI6ICIjMEY2RTU2IiwgInRoZW1lX2NvbG9yIjogIiMwRjZFNTYiLCAiaWNvbnMiOiBbeyJzcmMiOiAiZGF0YTppbWFnZS9wbmc7YmFzZTY0LGlWQk9SdzBLR2dvQUFBQU5TVWhFVWdBQUFNQUFBQURBQ0FZQUFBQlMzR3dIQUFBRlRFbEVRVlI0bk8zZFBYclVWaGlHWWRsWGFzZ0tvRXhMTmtPS1ZOa0E2VmhFT3RnQVZRcllUTkttVEZZQTJRQXBZbk1aTXorYTBkR1J2dlBlZHdVVWxtUi9qNDVtUmhZMzA4NDhmZlh5ODliN3dIbyt2ZjF3cy9VK1BMVHB6aGgycG1uYktMcHYyTkJ6U3U4WXVtM000SE9KWGlHc3ZoR0R6eEpyaDdEYUZ6ZjR0TFJXQ00yL3FNRm5UYTFEdUczNXhRdy9hMnM5WTAxcU12aHNvY1Zxc0hnRk1QeHNwY1hzTFFyQThMTzFwVE40ZFFDR243MVlNb3RYQldENDJadHJaL0xpQUF3L2UzWE5iRjRVZ09Gbjd5NmQwZGtCR0g2cXVHUldad1ZnK0tsbTdzeWVEY0R3VTlXYzJXMTZLd1JVY3pJQVozK3FPemZEUndNdy9JemkxQ3k3QkNMYXdRQ2MvUm5Oc1ptMkFoRHRtd0NjL1JuVm9kbTJBaER0cXdDYy9SbmQ0eG0zQWhEdFN3RE8vcVI0T090V0FLSUpnR2kzMCtUeWh6ejNNMjhGSUpvQWlDWUFvZ21BYURkZUFKUE1Da0EwQVJCTkFFUVRBTkVFUURRQkVFMEFSQk1BMFFSQU5BRVFUUUJFRXdEUkJFQzA3N2JlZ2IzNStPYjlsejkvLyt0UEcrNUpPeU1lVXl0V2dBY2VEc3FodjFjMDRqRzFKSUE3eHdhajhzQ01lRXl0Q1lCb0FpQ2FBSWdtQUtJTitUYm9reGZQZC8zMTl1RGFZL3Izejc4Yjc4bTJoZ3BneEVIZG0vdnY4U2doREhFSjlQSE5lOFBmMlpNWHo0ZDRPN1Y4QUIvZnZKK2V2WHU5OVc1RWV2YnVkZmtJeWdkZytMZFYvZnRmT2dDWFBmdFErZWRRT2dCWXFtd0FsYzg2STZyNjh5Z2JBTFFnZ0R2SFhzeFZmcEUzNGpHMUpvQUhIZy9HQ0lNeTRqRzFWUGIvQjZoNnpUbXlpcDhPV3dHSUpnQ2lDWUJvQWlDYUFJZ21BS0lKZ0dnQ0lGclpYNG44NTVmZnR0NEZIcW40MkVVckFORUVRRFFCRUUwQVJCTUEwUVJBTkFFUVRRQkVFd0RSQkVBMEFSQk5BRVFUQU5ISzNnMjZoa04zTTY3MStPKy9mdjd4bTMvNzRmYy9tbStuNXpGVlpBVzRjK3hXM2pWdThUMDAvS2YrL1ZvOWo2a3FBVXpuQjZMbHdKd2I4bFlSOUR5bXl1SURtRHNJTFFabTduQXZqYURuTVZVWEh3RFpCRUEwQVJCTkFFU0xEMkR1ZStJdDNqdWYrejcvMHM4RGVoNVRkZkVCVE5QNVFXZzVLT2VHdTlXSFlUMlBxVElCM0RrMkVHc015ckVoYi8xSmNNOWpxc3F0RUEvMEhJdzFibnM0eExDZlpnVWdtZ0NJSmdDaUNZQm9BaUNhQUlnbUFLSUpnR2dDSUpvQWlDWUFvZ21BYUFJZ21nQ0k1bmJvQjNvK1JhM1h0andaN2pRcndKMmVUMUhydFMxUGhqdFBBRlBmcDZqMTJwWW53ODBUSDBEUHA2ajEycFludzgwWEh3RFpCRUEwQVJCTkFFU0xENkRuVTlSNmJjdVQ0ZWFMRDJDYStqNUZyZGUyUEJsdUhnSGM2ZmtVdFY3YjhtUzQ4MjZldm5yNWVldWR1SVlmNHY1VS9GekJDa0EwQVJCTkFFUVRBTkVFUURRQkVFMEFSQk1BMFFSQU5BRVFUUUJFRXdEUkJFQTBBUkN0YkFBVmI3MGRXZFdmUjlrQW9JWFNBVlE5NjR5bThzK2hkQUN3VlBrQUtwOTlSbEQ5KzEvMmQ0SVA4WHZDL1ZRZi9IdERCWEJQQ09zWlpmRHZEUmtBekZYK05RQXNJUUNpQ1lCb0FpQ2FBSWgyKytudGg1dXRkd0syOE9udGh4c3JBTkVFUURRQkVFMEFSTHVkcHY5ZkRHeTlJOURUL2N4YkFZZ21BS0o5Q2NCbEVDa2V6cm9WZ0doZkJXQVZZSFNQWjl3S1FMUnZBckFLTUtwRHMyMEZJTnJCQUt3Q2pPYllURnNCaUhZMEFLc0FvemcxeXlkWEFCRlEzYmtaZGdsRXRMTUJXQVdvYXM3c3psb0JSRUExYzJkMjlpV1FDS2ppa2xtOTZEV0FDTmk3UzJmMDRoZkJJbUN2cnBuTnE5NEZFZ0Y3YysxTVh2MDJxQWpZaXlXenVPaHpBQkd3dGFVenVQaURNQkd3bFJhejEzUjQvVzh6OU5EeXBOdjBWZ2lyQVd0clBXT3JEYXpWZ0piV09ybXVmc1lXQWt1c2ZWWFI3WkpGQ0Z5aTErVjA5MnQySVhCSzc5ZVJtNzVvRlFQVHRPMmJKN3Q3MTBZVVk5dmJPNFgvQVhlaHBBZ0RGQ1RpQUFBQUFFbEZUa1N1UW1DQyIsICJzaXplcyI6ICIxOTJ4MTkyIiwgInR5cGUiOiAiaW1hZ2UvcG5nIiwgInB1cnBvc2UiOiAiYW55IG1hc2thYmxlIn0sIHsic3JjIjogImRhdGE6aW1hZ2UvcG5nO2Jhc2U2NCxpVkJPUncwS0dnb0FBQUFOU1VoRVVnQUFBZ0FBQUFJQUNBWUFBQUQwZU5UNkFBQVFJa2xFUVZSNG5PM2RQWGJrVkI2SFlibFB4N2hYQU9Ha3pHYmN3VVJzd0oyeENMSm1BMFFUTkpzWjBnbGhCUTBiTUlHUGNOa3VsYXRVdXJvZnYrY0pvZUhJMS9MOXY3cXkyemNUVGJxOXYzdW9mUTBBVy9qejUxOXZhbDhEci9ta1ZHTEFBendTQ0hWWTlCMFk5Z0NYRVFYbFdlQUNESHlBYlFtQzdWblFEUmo0QVBzU0JOZXpnQ3NaK2dCdEVBUHJXTFFMR1BvQWJSTUQ1N05RYnpEMEFmb2tCazZ6T0FzTWZvQXhDSUhqTE1vQlF4OWdiR0xnaVlXWURINkFORUlnUEFBTWZvQnN5U0VRK1lFYi9BQWNTZ3lCcUEvWTRBZmdsS1FRaVBoQURYNEFMcEVRQXU5cVgwQnBoajhBbDBxWUhjTVdUc0luRDREeVJqME5HTzZETXZnQktHRzBFQmpxRllEaEQwQXBvODJZSVdwbXRFOEtBRzBiNFRTZyt4TUF3eCtBdlkwd2U3b09nQkUrQVFEMHFmY1oxT1VSUnUrTERzQlllbndsME4wSmdPRVBRR3Q2bkUxZEJVQ1BDd3hBaHQ1bVZCZEhGcjB0S2dEWmVuZ2wwUHdKZ09FUFFHOTZtRjFOQjBBUEN3Z0F4N1ErdzVvTmdOWVhEZ0RlMHZJc2F6SUFXbDR3QUxoRXF6T3R1UUJvZGFFQVlLMFdaMXRUQWREaUFnSEFGbHFiY2MwRVFHc0xBd0JiYTJuV05SRUFMUzBJQUpUVXlzeXJIZ0N0TEFRQTdLV0YyVmMxQUZwWUFBQ29vZllNckJZQXRUOXdBS2l0NWl5c0VnQ0dQd0E4cWpVVGR3OEF3eDhBbnFzeEczY05BTU1mQUk3YmUwYnVGZ0NHUHdDY3R1ZXMzQ1VBREg4QU9NOWVNN1A2M3dNQUFPeXZlQUI0K2dlQXkrd3hPNHNHZ09FUEFPdVVucUhGQXNEd0I0RHJsSnlsdmdjQUFBSVZDUUJQL3dDd2pWSXpkZk1BTVB3QllGc2xadXVtQVdENEEwQVpXODlZM3dNQUFJRTJDd0JQL3dCUTFwYXpkcE1BTVB3QllCOWJ6Vnl2QUFBZzBOVUI0T2tmQVBhMXhleDFBZ0FBZ2E0S0FFLy9BRkRIdFRONGRRQVkvZ0JRMXpXejJDc0FBQWkwS2dBOC9RTkFHOWJPWkNjQUFCRG80Z0R3OUE4QWJWa3ptNTBBQUVDZ2l3TEEwejhBdE9uU0dlMEVBQUFDblIwQW52NEJvRzJYekdvbkFBQVE2S3dBOFBRUEFIMDRkMlk3QVFDQVFBSUFBQUs5R1FDTy93R2dMK2ZNYmljQUFCRG9aQUI0K2dlQVByMDF3NTBBQUVBZ0FRQUFnUllEd1BFL0FQVHQxQ3gzQWdBQWdRUUFBQVE2R2dDTy93RmdERXN6M1FrQUFBUVNBQUFRNkZVQU9QNEhnTEVjbSsxT0FBQWdrQUFBZ0VBQ0FBQUNQUXNBNy84QllFd3ZaN3dUQUFBSUpBQUFJSkFBQUlCQS93U0E5LzhBTUxiRFdlOEVBQUFDQ1FBQUNDUUFBQ0NRQUFDQVFPK215VGNBQWtDS2VlWTdBUUNBUUFJQUFBSUpBQUFJSkFBQUlKQUFBSUJBQWdBQUFna0FBQWgwNCs4QUFJQThUZ0FBSUpBQUFJQkFBZ0FBQWdrQUFBZ2tBQUFna0FBQWdFQUNBQUFDQ1FBQUNDUUFBQ0NRQUFDQVFBSUFBQUlKQUFBSUpBQUFJSkFBQUlCQUFnQUFBZ2tBQUFna0FBQWdrQUFBZ0VBQ0FBQUNDUUFBQ0NRQUFDQ1FBQUNBUUFJQUFBSUpBQUFJSkFBQUlKQUFBSUJBQWdBQUFna0FBQWdrQUFBZ2tBQUFnRUFDQUFBQ0NRQUFDUFMrOWdWQUNWOC9mM24xeno1OCtsamhTdWlOZTRjVU43ZjNkdysxTHdLMmNtenpmc2xtempIdUhkSjRCY0F3enRuQUwvbHo1SER2a0VnQU1JUkxOMlliT1RQM0Rxa0VBTjFidXlIYnlISHZrRXdBQUVBZ0FVRFhybjBTOHlTWHk3MURPZ0VBQUlFRUFBQUVFZ0FBRUVnQUFFQWdBUUFBZ1FRQUFBUVNBQUFRU0FBQVFDQUJBQUNCQkFBQUJCSUFBQkRvZmUwTG9GL2ZmUDlkN1V2WXhDZ2ZCL3RyNWQ3NTY3ZmZhMThDSFJJQW5LMlZ6UTU0N3VYWHBpRGdIQUtBTnhuODBKZjVhMVlJY0lvQVlKSEJEMzBUQXB6aW13QjU1ZXZuTDRZL0RPU2I3Nytidm43K1V2c3lhSXdBNEpsdnZ2OXUrdmFYSDJ0ZkJyQ3hiMy81VWRqempBRGdIellIR0ordmMyWUNnR21hYkFxUXhOYzcweVFBbUd3R2tNalhQUUlnbkUwQWN2bjZ6eVlBZ3ZuaUIrd0R1UVJBS0Q4U0JNenNCNWtFUUNnLzZnZk03QWVaQkVBZ1IzN0FTL2FGUEFJQUFBSUpnREFxSDFoaWY4Z2lBQUFna0FBSW91NkJ0OWduY2dnQUFBZ2tBQUFna0FBQWdFQUNJSVQzZXNDNTdCY1pCQUFBQkJJQWRPM2F2OExVWDRHYXk3MURPZ0VBQUlFRUFOMWIreVRtQ1E3M0Rza0VBRU80ZEVPMmdUTno3NUJLQURDTWN6ZG1Hemd2dVhkSWRITjdmL2RRK3lJb0wrM0hldjc0NGFkWC84em16VG5jTzQvKyt1MzMycGRBWVFJZ1JGb0FBTmNSQU9QekNnQUFBZ2tBQUFna0FBQWdrQUFBZ0VBQ0FBQUNDUUFBQ0NRQUFDQ1FBQUNBUUFJQUFBSUpBQUFJSkFBQUlKQUFBSUJBQWdBQUFna0FBQWdrQUFBZ2tBQUFnRUFDQUFBQ0NRQUFDQ1FBQUNDUUFBQ0FRQUlBQUFJSkFBQUk5TDcyQmJDUFAzNzRxZllsQUIzNThPbGo3VXVnTUNjQUFCQklBQUJBSUFFQUFJRUVBQUFFRWdBQUVFZ0FBRUFnQVFBQWdRUUFBQVFTQUFBUVNBQUFRQ0FCQUFDQkJBQUFCQklBQUJCSUFBQkFJQUVBQUlFRUFBQUVFZ0FBRUVnQUFFQWdBUUFBZ1FRQUFBUVNBQUFRU0FBQVFDQUJBQUNCQkFBQUJCSUFBQkJJQUFCQUlBRUFBSUVFQUFBRUVnQUFFRWdBQUVBZ0FRQUFnUVFBQUFRU0FBQVFTQUFBUUNBQkFBQ0JCQUFBQkhwZit3SmdheDgrZlZ6OGQxOC9mOW54U3RyMC8vLzhlL0hmL2V1Ly85dnhTdHJqM2lHSkFHQUlwemJ1cFQrWHRLR2ZHdnBMZnk0bEJ0dzdwUElLZ082ZHU0RnY5ZC8xNXR6aHY5Vi8xeFAzRHNtY0FOQ3RMVGJoK2Y4eDRoUGRGZ044L24rTWRocmczZ0VuQUhScTZ5ZXcwWjdvdG41NkgrazB3TDBEandRQTNTbTE0WTZ5a1pjYTFpTkVnSHNIbmdnQUFBZ2tBT2hLNlNldDNwL2tTaitsOTN3SzRONkI1d1FBM2RocmcrMTFJOTlyT1BjWUFlNGRlRTBBQUVBZ0FRQUFnUVFBWGRqN2FMVzNvOXk5aitWN2VnM2czb0hqQkFBQUJCSUFBQkJJQUFCQUlBRUFBSUVFQUFBRUVnQUFFRWdBMElXOWYrVnFiNy9pZGU5ZjE5dlRyd2QyNzhCeEFnQUFBZ2tBQUFna0FPakdYa2VydlI3aDduVXMzOVB4Lzh5OUE2OEpBTHBTZW9QdGZRTXZQWng3SFA0ejl3NDhKd0FBSUpBQW9EdWxuclJHZVlJcjlaVGU4OVAvekwwRFR3UUFYZHA2d3gxdEE5OTZXSTh3L0dmdUhYajB2dllGd0Zyenhudk5yMThkZWZPZWgvWTF2N3AzcE1GL3lMMERUZ0FZd05xTk9HVURYenZFUngzK2g5dzdKSE1Dd0JBT04rUlRUM1dwRy9maE1EOTFJcEF3OUY5eTc1QktBREFjRy9WcGlVUCtYTzRka25nRkFBQ0JCQUFBQkJJQUFCQklBQUJBSUFFQUFJRUVBQUFFRWdBQUVFZ0FBRUFnQVFBQWdRUUFBQVFTQUFBUVNBQUFRQ0FCQUFDQkJBQUFCQklBQUJCSUFBQkFJQUVBQUlFRUFBQUVFZ0FBRUVnQUFFQWdBUUFBZ1FRQUFBUVNBQUFRU0FBQVFDQUJBQUNCQkFBQUJCSUFBQkJJQUFCQUlBRUFBSUVFQUFBRUVnQUFFRWdBQUVBZ0FRQUFnUVFBQUFRU0FBQVFTQUFBUUNBQkFBQ0JCQUFBQkJJQUFCQklBQUJBSUFFQUFJSGUxNzRBMk5xSFR4OFgvOTNYejE5MnZKSTJXWjlsMW9Za043ZjNkdysxTDRMeVJ0KzhUbTNjUzBaZmswUFdaNW0xT1c3TnV0QVhyd0RvM3RxTkttV0RzejdMckEzSm5BQ0VHUEdKWmN0TjJQcWNOdHI2V0p1M2laenhPUUdnUzF0dlRxTnRkdFpubWJXQlJ3S0E3cFRhY0VmWnlLM1BNbXNEVHdRQUFBUVNBSFNsOUpOVzcwOXkxbWVadFlIbkJBRGQyR3VEN1hVanR6N0xyQTI4SmdBQUlKQUFBSUJBQW9BdTdIMjAydHRScnZWWlptM2dPQUVBQUlFRUFBQUVFZ0FBRUVnQUFFQWdBUUFBZ1FRQUFBUVNBSFJoNzErNTJ0dXZlTFUreTZ3TkhDY0FBQ0NRQUFDQVFBS0FidXgxdE5yckVhNzFXV1p0NERVQlFGZEtiN0M5YitEV1o1bTFnZWNFQUFBRUVnQjBwOVNUMWloUGNOWm5tYldCSndLQUxtMjk0WTYyZ1Z1ZlpkWUdIdDNjM3Q4OTFMNEl5aHQ1azdybTE2K092QzR6NjdQTTJpenphNDNINXdTQTdxM2RpRWZmd0dmV1o1bTFJWmtUZ0JCSkc5YXBKNWVrZFZoaWZaWlpteWRPQU1ZbkFFS2tiVjdBZFFUQStMd0NBSUJBQWdBQUFna0FBQWdrQUFBZ2tBQUFnRUFDQUFBQ0NRQUFDQ1FBQUNDUUFBQ0FRQUlBQUFJSkFBQUlKQUFBSUpBQUFJQkFBZ0FBQWdrQUFBZ2tBQUFna0FBQWdFQUNBQUFDQ1FBQUNDUUFBQ0NRQUFDQVFBSUFBQUlKQUFBSUpBQUFJSkFBQUlCQUFnQUFBZ2tBQUFna0FBQWdrQUFBZ0VBQ0FBQUNDUUFBQ0NRQUFDQ1FBQUNBUUFJQUFBSUpBQUFJSkFBQUlKQUFDUEhoMDhmYWx3QjB3bjZSUVFBQVFDQUJBQUNCQkFBQUJCSUFRYnpYQTk1aW44Z2hBQUFna0FBSW8rNkJKZmFITEFJQUFBSUpnRUFxSDNqSnZwQkhBQUJBSUFFUVN1MERNL3RCSmdFUXpCYzlZQi9JSlFEQytlS0hYTDcrc3drQWJBSVF5TmM5QW9CcG1td0drTVRYTzlNa0FEaGdVNER4K1RwbkpnQjR4dVlBNC9MMXphR2IyL3U3aDlvWFFadStmdjVTK3hLQURSajhIQ01BZUpNUWdENFovSndpQURpYkVJQStHUHljUXdDd21pQ0FOaGo0ckNFQUFDQ1Fud0lBZ0VBQ0FBQUNDUUFBQ0NRQUFDQ1FBQUNBUUFJQUFBSUpBQUFJSkFBQUlKQUFBSUJBNy83OCtkZWIyaGNCQU96bno1OS92WEVDQUFDQkJBQUFCQklBQUJCSUFBQkFJQUVBQUlFRUFBQUVFZ0FBRU9qZE5EMytQR0R0Q3dFQXlwdG52aE1BQUFna0FBQWdrQUFBZ0VBQ0FBQUMvUk1BdmhFUUFNWjJPT3VkQUFCQUlBRUFBSUVFQUFBRWVoWUF2ZzhBQU1iMGNzWTdBUUNBUUFJQUFBSUpBQUFJOUNvQWZCOEFBSXpsMkd4M0FnQUFnUVFBQUFRNkdnQmVBd0RBR0pabXVoTUFBQWdrQUFBZzBHSUFlQTBBQUgwN05jdWRBQUJBSUFFQUFJRk9Cb0RYQUFEUXA3ZG11Qk1BQUFqMFpnQTRCUUNBdnB3enU1MEFBRUFnQVFBQWdjNEtBSzhCQUtBUDU4NXNKd0FBRU9qc0FIQUtBQUJ0dTJSV093RUFnRUFYQllCVEFBQm8wNlV6MmdrQUFBUzZPQUNjQWdCQVc5Yk1aaWNBQUJCb1ZRQTRCUUNBTnF5ZHlVNEFBQ0RRNmdCd0NnQUFkVjB6aTY4NkFSQUJBRkRIdFRQWUt3QUFDSFIxQURnRkFJQjliVEY3blFBQVFLQk5Bc0FwQUFEc1k2dVp1OWtKZ0FnQWdMSzJuTFZlQVFCQW9FMER3Q2tBQUpTeDlZemQvQVJBQkFEQXRrck0xaUt2QUVRQUFHeWoxRXoxUFFBQUVLaFlBRGdGQUlEcmxKeWxSVThBUkFBQXJGTjZoaFovQlNBQ0FPQXllOHhPM3dNQUFJRjJDUUNuQUFCd25yMW01bTRuQUNJQUFFN2JjMWJ1K2dwQUJBREFjWHZQeU4yL0IwQUVBTUJ6TldaamxXOENGQUVBOEtqV1RLejJVd0FpQUlCME5XZGgxUjhERkFFQXBLbzlBNnYvUFFDMUZ3QUE5dGJDN0tzZUFOUFV4a0lBd0I1YW1YbE5CTUEwdGJNZ0FGQktTN091bVFDWXByWVdCZ0MyMU5xTWF5b0FwcW05QlFLQWE3VTQyNW9MZ0dscWM2RUFZSTFXWjFxVEFUQk43UzRZQUp5cjVWbldiQUJNVTlzTEJ3Q250RDdEbWc2QWFXcC9BUUhncFI1bVYvTVhlT2oyL3U2aDlqVUF3SkllQnYrcytST0FRejB0TEFCWmVwdFJYUVhBTlBXM3dBQ01yOGZaMU4wRkgvSktBSUNhZWh6OHMrNU9BQTcxdlBBQTlLMzNHZFIxQUV4VC81OEFBUG96d3V6cC9nTTQ1SlVBQUNXTk1QaG4zWjhBSEJycEV3TkFXMGFiTVVOOU1JZWNCZ0N3aGRFRy8yeklEK3FRRUFCZ2pWRUgvMnlvVndESGpQNEpCR0I3Q2JOaitBL3drTk1BQUU1SkdQeXptQS8wa0JBQTRGRFM0Si9GZmNDSGhBQkF0c1RCUDR2OXdBOEpBWUFzeVlOL0ZyOEFoNFFBd05nTS9pY1dZb0VZQUJpRG9YK2NSWG1ERUFEb2s4Ri9tc1c1Z0JnQWFKdWhmejRMdFpJWUFHaURvYitPUmR1QUdBRFlsNkYvUFF0WWdDQUEySmFCdnowTHVnTkJBSEFaQTc4OEMxeUpLQUI0Wk5qWFlkRWJKUkNBVVJqd2Jmb2J0RjRaQTFmTjI2QUFBQUFBU1VWT1JLNUNZSUk9IiwgInNpemVzIjogIjUxMng1MTIiLCAidHlwZSI6ICJpbWFnZS9wbmciLCAicHVycG9zZSI6ICJhbnkgbWFza2FibGUifV19">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAE5klEQVR4nO3dMXrcRBjHYdkPNeEEUNLCZUJBxQVCxyHo8AWoKMhloKWEExAuEAoeBzvW7mpXo5G+/7xvlbiwpNUvX8bazeRuOoBXb16/3/scWO/dw9u7vc9hlxMQ8Bj2CLzbAUU8tl5xb3oQETNny7g3+cZCZoktwr5v/Q3FzFJbtNLsT4iQWaPVtG4yocXMWq0aWvWnQshsYc20vnlCi5mtrGnrpqDFzNZubezqoMVML7e0dlXQYqa3a5tbHLSY2cs17S0KWszsbWmDF4MWM0expMXmb33Dns4GbTpzNJeaPBm0mDmqc21achBlNmjTmaM71eiLoMVMFXOtWnIQ5VnQpjPVfNysCU0UQRPlQ9CWG1T1tF0TmiiCJsr9NFluUN9jwyY0UQRNFEET5c76mSQmNFEETRRBE0XQRBE0UQRNFEETRdBEETRRBE0UQRNF0EQRNFE+2fsE9vT3T79++PVn33+z45msl3Qtaww7oZ8GMPf7SpKuZa0hgz51wyuGkHQtLQwZNLkETRRBE0XQRIl5bPfpV18c6vscwbXX8s/vf250Jv2UDzopwL09vpaVwy4btJC3UznskmtoMfdR8XUuGTScUi7oilOjsmqvd7mg4ZxSQVebFikqve6lgm7l859/uOrrR5Z0LS0MGfQ0vbzhlQNIupa1Sm2nW+mvvjRVnkkPO6HJJGiiCJoogiaKoIkiaKIImiiCJkqpD/j/9d2Pe5/CsKrsxmRCE0XQRBE0UQRNFEETRdBEETRRBE0UQRNF0EQRNFFKfZajpbnPJmzx/5L88e3XL7725S+/NT1Gr2upYMgJfeqDNq0/gDMX87mv36LXtVQxXNCXbnSrEC5F2yLqXtdSyVBBL73Ba0NYGuuaqHtdSzVDBU0+QRNF0EQRNFGGCnrps9m1z3CXPmde8zy617VUM1TQ03T5BrcK4FKsLd5c6XUtlQwX9DSdvtGtAzgVbct3CntdSxXDvvXd64a3fpt7zqjxzhlyQpNL0EQRNFEETRRBE0XQRBE0UQRNFEETRdBEETRRBE0UQRNl2E/b9dqcpcdxbDTzvyEndK/NWXocx0Yzzw0XdK/NWXocx0YzLw0VdK/NWXocx0Yz84YKmnyCJoqgiSJoogwVdK/NWXocx0Yz84YKepr6bc7S4zg2mnlpuKCnqd/mLD2OY6OZ5+5evXn9fu+TWGrUm3QEVZ5nDzmhySVoogiaKIImiqCJImiiCJoogiaKoIkiaKIImiiCJkqpoKt8QCZNpde9VNBwSbmgK02LBNVe73JBwzklg642Naqq+DqX+hcrc/wrlvYqhvyofNCPhL1e5ZAfxQQN01R0DQ2nCJoogiaKoIkiaKLcv3t4e7f3SUAL7x7e3pnQRBE0UQRNlPtp+m/tsfeJwBqPDZvQRBE0UT4EbdlBVU/bNaGJImiiPAvasoNqPm7WhCbKi6BNaaqYa3V2QouaozvVqCUHUU4GbUpzVOfaPDuhRc3RXGrSkoMoF4M2pTmKJS0umtCiZm9LG1y85BA1e7mmvavW0KKmt2ubu/qHQlHTyy2t3fSUQ9Rs7dbGbn5sJ2q2sqatJlHakpcWWgzJJm+smNas1aqh5iGa1lyj9TBs/ta3ac1SW7SyaXymNXO2HHrdpqm4x9brb+5dlgfiHsMey89DrHcFnuEIPz/9Czwaid3vPymZAAAAAElFTkSuQmCC">
+<link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAE5klEQVR4nO3dMXrcRBjHYdkPNeEEUNLCZUJBxQVCxyHo8AWoKMhloKWEExAuEAoeBzvW7mpXo5G+/7xvlbiwpNUvX8bazeRuOoBXb16/3/scWO/dw9u7vc9hlxMQ8Bj2CLzbAUU8tl5xb3oQETNny7g3+cZCZoktwr5v/Q3FzFJbtNLsT4iQWaPVtG4yocXMWq0aWvWnQshsYc20vnlCi5mtrGnrpqDFzNZubezqoMVML7e0dlXQYqa3a5tbHLSY2cs17S0KWszsbWmDF4MWM0expMXmb33Dns4GbTpzNJeaPBm0mDmqc21achBlNmjTmaM71eiLoMVMFXOtWnIQ5VnQpjPVfNysCU0UQRPlQ9CWG1T1tF0TmiiCJsr9NFluUN9jwyY0UQRNFEET5c76mSQmNFEETRRBE0XQRBE0UQRNFEETRdBEETRRBE0UQRNF0EQRNFE+2fsE9vT3T79++PVn33+z45msl3Qtaww7oZ8GMPf7SpKuZa0hgz51wyuGkHQtLQwZNLkETRRBE0XQRIl5bPfpV18c6vscwbXX8s/vf250Jv2UDzopwL09vpaVwy4btJC3UznskmtoMfdR8XUuGTScUi7oilOjsmqvd7mg4ZxSQVebFikqve6lgm7l859/uOrrR5Z0LS0MGfQ0vbzhlQNIupa1Sm2nW+mvvjRVnkkPO6HJJGiiCJoogiaKoIkiaKIImiiCJkqpD/j/9d2Pe5/CsKrsxmRCE0XQRBE0UQRNFEETRdBEETRRBE0UQRNF0EQRNFFKfZajpbnPJmzx/5L88e3XL7725S+/NT1Gr2upYMgJfeqDNq0/gDMX87mv36LXtVQxXNCXbnSrEC5F2yLqXtdSyVBBL73Ba0NYGuuaqHtdSzVDBU0+QRNF0EQRNFGGCnrps9m1z3CXPmde8zy617VUM1TQ03T5BrcK4FKsLd5c6XUtlQwX9DSdvtGtAzgVbct3CntdSxXDvvXd64a3fpt7zqjxzhlyQpNL0EQRNFEETRRBE0XQRBE0UQRNFEETRdBEETRRBE0UQRNl2E/b9dqcpcdxbDTzvyEndK/NWXocx0Yzzw0XdK/NWXocx0YzLw0VdK/NWXocx0Yz84YKmnyCJoqgiSJoogwVdK/NWXocx0Yz84YKepr6bc7S4zg2mnlpuKCnqd/mLD2OY6OZ5+5evXn9fu+TWGrUm3QEVZ5nDzmhySVoogiaKIImiqCJImiiCJoogiaKoIkiaKIImiiCJkqpoKt8QCZNpde9VNBwSbmgK02LBNVe73JBwzklg642Naqq+DqX+hcrc/wrlvYqhvyofNCPhL1e5ZAfxQQN01R0DQ2nCJoogiaKoIkiaKLcv3t4e7f3SUAL7x7e3pnQRBE0UQRNlPtp+m/tsfeJwBqPDZvQRBE0UT4EbdlBVU/bNaGJImiiPAvasoNqPm7WhCbKi6BNaaqYa3V2QouaozvVqCUHUU4GbUpzVOfaPDuhRc3RXGrSkoMoF4M2pTmKJS0umtCiZm9LG1y85BA1e7mmvavW0KKmt2ubu/qHQlHTyy2t3fSUQ9Rs7dbGbn5sJ2q2sqatJlHakpcWWgzJJm+smNas1aqh5iGa1lyj9TBs/ta3ac1SW7SyaXymNXO2HHrdpqm4x9brb+5dlgfiHsMey89DrHcFnuEIPz/9Czwaid3vPymZAAAAAElFTkSuQmCC">
+<style>
+:root{ --bg:#F4F2EC; --card:#FFFFFF; --line:#E7E4DA; --ink:#26261F; --mut:#76746C; --hint:#A3A199; --teal:#0F6E56; --tealbg:#E1F5EE; }
+*{box-sizing:border-box; -webkit-tap-highlight-color:transparent;}
+html,body{margin:0; padding:0;}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; background:var(--bg); color:var(--ink); -webkit-font-smoothing:antialiased;}
+.wrap{max-width:480px; margin:0 auto; min-height:100vh; padding:env(safe-area-inset-top) 0 0;}
+.app{padding:14px 16px 96px;}
+.sect{background:var(--card); border:1px solid var(--line); border-radius:22px; padding:14px 16px; margin-bottom:12px;}
+.h3{margin:0 0 10px; font-size:12px; letter-spacing:.04em; text-transform:uppercase; color:var(--hint); font-weight:600;}
+.nav{width:34px; height:34px; border-radius:11px; border:1px solid var(--line); background:var(--card); display:flex; align-items:center; justify-content:center; cursor:pointer; color:var(--ink); flex-shrink:0;}
+.headrow{display:flex; align-items:center; justify-content:space-between; margin-bottom:10px;}
+.headrow .mt{font-size:16px; font-weight:600;}
+
+.dayhead{display:flex; align-items:flex-start; justify-content:space-between;}
+.dayhead .dow{font-size:13px; color:var(--mut); margin:0;}
+.dayhead .dt{font-size:28px; font-weight:600; margin:2px 0 0; line-height:1.05;}
+.dayhead .pill{display:inline-block; margin-left:8px; font-size:11px; padding:3px 9px; border-radius:999px; background:var(--tealbg); color:var(--teal); vertical-align:middle;}
+.dactions{display:flex; gap:8px; align-items:center;}
+
+.sportbox{margin-top:14px; display:flex; gap:11px; align-items:center; border-radius:16px; padding:13px 14px;}
+.sportbox .si{width:34px; height:34px; display:flex; align-items:center; justify-content:center; flex-shrink:0;}
+.sportbox .sl{font-size:11px; margin:0; opacity:.85;}
+.sportbox .st{font-size:16px; font-weight:600; margin:2px 0 0;}
+
+.strip{display:flex; gap:7px; overflow-x:auto; padding:2px 2px 4px; scroll-behavior:smooth;}
+.strip::-webkit-scrollbar{display:none;}
+.chip{flex:0 0 auto; width:46px; padding:8px 0; border-radius:14px; text-align:center; cursor:pointer; border:1px solid var(--line); background:var(--card);}
+.chip.today:not(.sel){border-color:var(--teal);}
+.chip.sel{background:var(--teal); border-color:var(--teal); color:#fff;}
+.chip .cw{font-size:10px; color:var(--hint);}
+.chip.sel .cw{color:#fff;}
+.chip .cd{font-size:15px; font-weight:600; margin-top:1px;}
+.chip .cdot{width:5px; height:5px; border-radius:50%; margin:3px auto 0;}
+
+.slot{display:flex; gap:10px; align-items:flex-start;}
+.stime{width:42px; flex-shrink:0; text-align:right; padding-top:12px; font-size:12px; color:var(--mut); font-variant-numeric:tabular-nums;}
+.sgroup{flex:1; min-width:0; min-height:14px; display:flex; flex-direction:column; gap:8px; padding-bottom:8px;}
+.tile{display:flex; gap:11px; align-items:center; border-radius:15px; padding:11px 12px; cursor:pointer; min-width:0; transition:opacity .15s; touch-action:pan-y;}
+.tile.done{opacity:.4;}
+.tile.done .tlabel{text-decoration:line-through;}
+.tile.dragging{opacity:.6;}
+.ticon{width:26px; display:flex; align-items:center; justify-content:center; flex-shrink:0;}
+.tbody{flex:1; min-width:0;}
+.tlabel{font-size:14px; line-height:1.3;}
+.tsub{font-size:11.5px; margin-top:2px; line-height:1.3; opacity:.8;}
+.thandle{flex-shrink:0; padding:4px; touch-action:none; cursor:grab; display:flex; align-items:center; opacity:.55;}
+
+.addbtn{margin-top:6px; width:100%; padding:11px; border-radius:14px; border:1px dashed var(--line); background:transparent; color:var(--teal); font-size:14px; font-weight:500; cursor:pointer; display:none; align-items:center; justify-content:center; gap:7px;}
+.resetbtn{margin-top:8px; width:100%; padding:9px; border-radius:12px; border:none; background:transparent; color:var(--mut); font-size:13px; cursor:pointer; display:none; align-items:center; justify-content:center; gap:6px;}
+body.editing .addbtn{display:flex;}
+body.editing .resetbtn{display:flex;}
+.hinttext{font-size:11.5px; color:var(--hint); text-align:center; margin:4px 0 0;}
+
+.mealrow{display:flex; gap:11px; align-items:flex-start; border-radius:15px; padding:12px; margin-bottom:9px;}
+.mealrow .mi{width:32px; height:32px; border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0;}
+.mealrow .ml{font-size:11px; color:var(--mut); margin:0;}
+.mealrow .mn{font-size:14px; margin:2px 0 0;}
+.mealrow .mg{font-size:11.5px; color:var(--mut); margin:4px 0 0; line-height:1.4;}
+.btn{width:100%; padding:12px; border-radius:14px; border:1px solid var(--line); background:var(--card); font-size:14px; font-weight:500; cursor:pointer; color:var(--ink); display:flex; align-items:center; justify-content:center; gap:7px;}
+
+.racecard{display:flex; gap:11px; align-items:center; border:1px solid var(--line); border-radius:15px; padding:11px 12px; margin-bottom:9px;}
+.racecard .ri{width:34px; height:34px; border-radius:11px; background:#8077E5; display:flex; align-items:center; justify-content:center; flex-shrink:0;}
+.racecard .rn{font-size:14px; font-weight:600; margin:0;}
+.racecard .rd{font-size:12px; color:var(--mut); margin:2px 0 0;}
+.tlist .ti2{display:flex; gap:10px; padding:7px 0; font-size:13.5px; align-items:baseline;}
+.tlist .ti2+.ti2{border-top:1px solid var(--line);}
+.tlist .td{width:62px; flex-shrink:0; color:var(--mut); font-size:12px;}
+.exlist li{font-size:13.5px; padding:5px 0; line-height:1.4;}
+.exlist{margin:0; padding-left:18px;}
+
+.grid7{display:grid; grid-template-columns:repeat(7,1fr); gap:5px; text-align:center;}
+.dow7{font-size:11px; color:var(--hint); padding:3px 0;}
+.cell{aspect-ratio:1; display:flex; flex-direction:column; align-items:center; justify-content:center; border-radius:12px; border:1.5px solid transparent; cursor:pointer; font-size:14px; gap:3px;}
+.cell.today{border-color:var(--teal);}
+.cell.sel{background:var(--teal); color:#fff; border-color:var(--teal);}
+.cell .cdot{width:5px; height:5px; border-radius:50%;}
+.tabbar{position:fixed; left:0; right:0; bottom:0; background:#fffffff2; backdrop-filter:saturate(180%) blur(8px); border-top:1px solid var(--line); display:flex; padding:8px 0 calc(8px + env(safe-area-inset-bottom));}
+.tab{flex:1; display:flex; flex-direction:column; align-items:center; gap:3px; color:var(--hint); cursor:pointer; background:none; border:none; font-family:inherit;}
+.tab span{font-size:10px;}
+.tab.on{color:var(--teal);}
+
+.overlay{position:fixed; inset:0; background:#0008; display:none; align-items:flex-end; justify-content:center; z-index:50;}
+.overlay.show{display:flex;}
+.modal{background:var(--card); width:100%; max-width:480px; border-radius:22px 22px 0 0; padding:18px 18px calc(18px + env(safe-area-inset-bottom));}
+.modal h4{margin:0 0 14px; font-size:17px; font-weight:600;}
+.fld{margin-bottom:12px;}
+.fld label{display:block; font-size:12px; color:var(--mut); margin-bottom:5px;}
+.fld input,.fld select{width:100%; padding:11px 12px; border-radius:12px; border:1px solid var(--line); font-size:15px; font-family:inherit; background:var(--bg); color:var(--ink);}
+.mbtns{display:flex; gap:9px; margin-top:6px;}
+.mbtns button{flex:1; padding:12px; border-radius:13px; border:none; font-size:14px; font-weight:600; cursor:pointer; font-family:inherit;}
+.save{background:var(--teal); color:#fff;}
+.cancel{background:var(--bg); color:var(--ink);}
+.del{background:#FCEBEB; color:#A32D2D;}
+.hidden{display:none !important;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="app">
+
+    <div id="viewMain">
+      <div class="sect">
+        <div class="dayhead">
+          <div class="dd">
+            <p class="dow" id="hDow">–</p>
+            <p class="dt"><span id="hDate">–</span><span class="pill hidden" id="hPill">Heute</span></p>
+          </div>
+          <div class="dactions">
+            <div class="nav" id="prevDay"></div>
+            <div class="nav" id="nextDay"></div>
+            <div class="nav" id="editBtn" title="Bearbeiten"></div>
+          </div>
+        </div>
+        <div id="hSport"></div>
+      </div>
+
+      <div class="sect">
+        <div class="headrow">
+          <div class="nav" id="prevMonth"></div>
+          <span class="mt" id="stripMonth">–</span>
+          <div class="nav" id="nextMonth"></div>
+        </div>
+        <div class="strip" id="strip"></div>
+      </div>
+
+      <div class="sect">
+        <div id="timeline"></div>
+        <button class="addbtn" id="addBtn"></button>
+        <button class="resetbtn" id="resetBtn"></button>
+      </div>
+    </div>
+
+    <div id="viewCal" class="hidden">
+      <div class="sect">
+        <div class="headrow">
+          <div class="nav" id="prevCal"></div>
+          <span class="mt" id="calTitle">–</span>
+          <div class="nav" id="nextCal"></div>
+        </div>
+        <div class="grid7" style="margin-bottom:5px;">
+          <span class="dow7">Mo</span><span class="dow7">Di</span><span class="dow7">Mi</span><span class="dow7">Do</span><span class="dow7">Fr</span><span class="dow7">Sa</span><span class="dow7">So</span>
+        </div>
+        <div class="grid7" id="calGrid"></div>
+      </div>
+    </div>
+
+    <div id="viewTraining" class="hidden">
+      <div class="sect">
+        <p class="h3">Nächste Wettkämpfe</p>
+        <div id="raceList"></div>
+      </div>
+      <div class="sect">
+        <div class="headrow">
+          <div class="nav" id="prevTMonth"></div>
+          <span class="mt" id="tMonthTitle">–</span>
+          <div class="nav" id="nextTMonth"></div>
+        </div>
+        <div class="tlist" id="trainList"></div>
+      </div>
+      <div class="sect">
+        <p class="h3">Hüftaktivierung · bei jeder Fitti-Einheit</p>
+        <ul class="exlist" id="exList"></ul>
+      </div>
+    </div>
+
+    <div id="viewMeals" class="hidden">
+      <div class="sect">
+        <p class="h3">Essensvorschläge · vegetarisch · schnell · gesund</p>
+        <div id="mealList"></div>
+        <button class="btn" id="rotateBtn" style="margin-top:6px;"></button>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="tabbar">
+    <button class="tab on" data-v="Main"><span class="tabic"></span><span>Tag</span></button>
+    <button class="tab" data-v="Training"><span class="tabic"></span><span>Training</span></button>
+    <button class="tab" data-v="Cal"><span class="tabic"></span><span>Monat</span></button>
+    <button class="tab" data-v="Meals"><span class="tabic"></span><span>Essen</span></button>
+  </div>
+</div>
+
+<div class="overlay" id="overlay">
+  <div class="modal">
+    <h4 id="modalTitle">Aktivität</h4>
+    <div class="fld"><label>Bezeichnung</label><input type="text" id="fLabel" placeholder="z. B. Yoga"></div>
+    <div class="fld"><label>Uhrzeit</label><input type="time" id="fTime"></div>
+    <div class="fld"><label>Kategorie</label>
+      <select id="fCat">
+        <option value="aufstehen">Aufstehen</option>
+        <option value="fila">Runde mit Fila</option>
+        <option value="deepwork">Deep Work</option>
+        <option value="arbeit">Arbeiten</option>
+        <option value="sport">Laufsport</option>
+        <option value="berg">Berg / Trail</option>
+        <option value="fitti">Kraft / Fitti</option>
+        <option value="beach">Beach / Outdoor</option>
+        <option value="agilityT">Agility Training</option>
+        <option value="agilityW">Agility Turnier</option>
+        <option value="race">Wettkampf</option>
+        <option value="essen">Essen</option>
+        <option value="schlaf">Schlafen</option>
+        <option value="sonstiges">Sonstiges</option>
+      </select>
+    </div>
+    <div class="mbtns">
+      <button class="del hidden" id="mDel">Löschen</button>
+      <button class="cancel" id="mCancel">Abbrechen</button>
+      <button class="save" id="mSave">Speichern</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const IP = {
+  sunrise:{p:'<path d="M3 18h18M12 9V3M5.6 11.6 4.2 10.2M18.4 11.6l1.4-1.4M7 18a5 5 0 0 1 10 0"/>'},
+  paw:{p:'<circle cx="6" cy="11" r="1.8"/><circle cx="10" cy="7" r="1.8"/><circle cx="14" cy="7" r="1.8"/><circle cx="18" cy="11" r="1.8"/><path d="M8.5 16.5c0-2 1.6-3 3.5-3s3.5 1 3.5 3-1.6 3.5-3.5 3.5-3.5-1.5-3.5-3.5z"/>'},
+  bulb:{p:'<path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10c1 .9 1 1.6 1 2h6c0-.4 0-1.1 1-2a6 6 0 0 0-4-10z"/>'},
+  briefcase:{p:'<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18"/>'},
+  activity:{p:'<path d="M3 12h4l2 6 4-14 2 8h6"/>'},
+  mountain:{p:'<path d="M3 20h18L14 7l-3 5-2-3-6 11z"/>'},
+  dumbbell:{p:'<path d="M4 9v6M7 8v8M17 8v8M20 9v6M7 12h10"/>'},
+  sun:{p:'<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.4 1.4M17.6 17.6 19 19M19 5l-1.4 1.4M6.4 17.6 5 19"/>'},
+  trophy:{p:'<path d="M8 21h8M12 17v4M6 4h12v4a6 6 0 0 1-12 0V4zM6 6H4v1a3 3 0 0 0 3 3M18 6h2v1a3 3 0 0 1-3 3"/>'},
+  bowl:{p:'<path d="M3 11a9 9 0 0 0 18 0zM2 11h20M8 7c0-1.2 1-1.8 1-3M12 7c0-1.2 1-1.8 1-3M16 7c0-1.2 1-1.8 1-3"/>'},
+  moon:{p:'<path d="M21 12.8A8 8 0 1 1 11.2 3 6 6 0 0 0 21 12.8z"/>'},
+  zzz:{p:'<path d="M4 8h5l-5 6h5"/><path d="M13 4h6l-6 8h6"/>'},
+  star:{p:'<path d="M12 3l2.6 5.3 5.9.9-4.3 4.2 1 5.9L12 17l-5.2 2.8 1-5.9L3.5 9.5l5.9-.9z"/>'},
+  chevL:{p:'<path d="M15 6l-6 6 6 6"/>'},
+  chevR:{p:'<path d="M9 6l6 6-6 6"/>'},
+  pencil:{p:'<path d="M4 20h4L18 10l-4-4L4 16v4zM13 6l4 4"/>'},
+  plus:{p:'<path d="M12 5v14M5 12h14"/>'},
+  refresh:{p:'<path d="M21 12a9 9 0 1 1-3-6.6L21 8M21 3v5h-5"/>'},
+  grip:{p:'<circle cx="9" cy="6" r="1.4"/><circle cx="9" cy="12" r="1.4"/><circle cx="9" cy="18" r="1.4"/><circle cx="15" cy="6" r="1.4"/><circle cx="15" cy="12" r="1.4"/><circle cx="15" cy="18" r="1.4"/>',fill:true},
+  list:{p:'<rect x="4" y="5" width="16" height="6" rx="1.5"/><rect x="4" y="13" width="16" height="6" rx="1.5"/>'},
+  month:{p:'<rect x="4" y="5" width="16" height="16" rx="2"/><path d="M4 9h16M9 3v4M15 3v4"/>'},
+  run:{p:'<circle cx="14" cy="5" r="1.6" fill="currentColor" stroke="none"/><path d="M5 20l3-4 3 1 1-4-3-2 4-3 2 3h3M9 13l-1 3"/>'},
+  salad:{p:'<path d="M5 12h14a7 7 0 0 1-14 0zM12 12a4 4 0 0 0-4-4 4 4 0 0 1 4-3 4 4 0 0 1 4 3 4 4 0 0 0-4 4z"/>'},
+  reset:{p:'<path d="M9 14l-4-4 4-4M5 10h9a5 5 0 0 1 0 10h-3"/>'}
+};
+function svg(name,color,size){
+  const d=IP[name]||IP.star; size=size||20;
+  const f=d.fill?color:'none', s=d.fill?'none':color;
+  return '<svg viewBox="0 0 24 24" width="'+size+'" height="'+size+'" fill="'+f+'" stroke="'+s+'" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">'+d.p+'</svg>';
+}
+
+const CAT = {
+  aufstehen:{ic:'sunrise',bg:'#FFD5EF',fg:'#353B3C'},
+  schlaf:{ic:'moon',bg:'#353B3C',fg:'#ffffff'},
+  fila:{ic:'paw',bg:'#846A6A',fg:'#ffffff'},
+  sport:{ic:'activity',bg:'#CBC8F9',fg:'#353B3C'},
+  berg:{ic:'mountain',bg:'#CBC8F9',fg:'#353B3C'},
+  fitti:{ic:'dumbbell',bg:'#FFA185',fg:'#353B3C'},
+  beach:{ic:'sun',bg:'#CBC8F9',fg:'#353B3C'},
+  agilityT:{ic:'paw',bg:'#D3EEE4',fg:'#2B5446'},
+  agilityW:{ic:'trophy',bg:'#8CB1A4',fg:'#ffffff'},
+  race:{ic:'trophy',bg:'#8077E5',fg:'#ffffff'},
+  deepwork:{ic:'bulb',bg:'#BCD2FF',fg:'#1C3A66'},
+  arbeit:{ic:'briefcase',bg:'#BCD2FF',fg:'#1C3A66'},
+  essen:{ic:'bowl',bg:'#EEF0F2',fg:'#353B3C'},
+  frei:{ic:'zzz',bg:'#F1EFE9',fg:'#353B3C'},
+  sonstiges:{ic:'star',bg:'#EEF0F2',fg:'#353B3C'}
+};
+
+const PLAN = {
+  5:{4:"Beach Training",5:"Easy 30 + Agility",6:"Fitti",7:"Tempo 35 min · 4×1k",8:"Fitti & 5k Lauf MSV",9:"Frei: Biken Borderline",10:"Long 60 min · 10 km",11:"Beach Training (ausgefallen)",12:"Easy 30 + Agility (ausgefallen)",13:"Fitti",14:"Hügel 40 min · 6 km",15:"Community Beach",16:"Agility Rheinau",17:"Agility Rheinau",18:"Beach Training",19:"Easy 30 + Agility",20:"Fitti",21:"Berg 50 min · 200 hm",22:"Fitti",23:"Frei",24:"Long 75 min · 200 hm",25:"Beach Training",26:"Easy 30 + Agility",27:"Fitti",28:"Tempo 35 min · 5:00/km",29:"Frei",30:"Agility Baden-Baden",31:"Agility Baden-Baden"},
+  6:{1:"Beach Training",2:"Easy 30 + Agility",3:"Fitti",4:"Berg 50 min · 250 hm",5:"Fitti",6:"Frei",7:"Long 90 min · 14 km, 300 hm",8:"Fitti",9:"Easy 35 + Agility",10:"Frei",11:"Tempo 40 min · 7 km",12:"Fitti",13:"Frei",14:"Long 1:45 h · 16 km, 400 hm",15:"Fitti",16:"Easy 35 + Agility",17:"Frei",18:"Berg 60 min · 10 km, 350 hm",19:"Fitti",20:"Frei",21:"Long 1:50 h · 16 km, 500 hm",22:"Fitti",23:"Easy 30 + Agility",24:"Frei",25:"Tempo 35 min · 5:00/km",26:"Community Beach",27:"Agility Bühl",28:"Agility Bühl",29:"Frei",30:"Easy 35 + Agility"},
+  7:{1:"Berg 60 min · 10 km, 400 hm",2:"Frei",3:"Fitti",4:"Frei",5:"Long 2:00 h · 18 km, 550 hm",6:"Frei",7:"Easy 30 + Agility",8:"Fitti leicht (nur Hüfte)",9:"Frei",10:"Frei",11:"Shakeout 20 min · 3 Steigerungen",12:"ROSSKOPF 18,5 km / 560 hm",13:"Frei",14:"Nur Agility mit Fila",15:"Fitti leicht",16:"Easy 30 min · Beine checken",17:"Frei",18:"Berg locker 50 min · 350 hm",19:"Easy 50 min · 8 km flach",20:"Frei",21:"Easy 30 + Agi kurz",22:"Fitti leicht (nur Hüfte)",23:"Frei",24:"Shakeout 20 min · 3 Steigerungen",25:"TOTEMANN 10,4 km / 750 hm",26:"Frei",27:"Frei",28:"Easy 30 + Agility",29:"Frei",30:"Easy 35 min",31:"Fitti"},
+  8:{1:"Frei",2:"Long mit Fila 75 min · 12 km",3:"Fitti",4:"Easy mit Fila + Agility",5:"Frei",6:"Tempo 35 min · 6 km",7:"Frei",8:"Agility Freiburg",9:"Agility Freiburg",10:"Fitti",11:"Easy mit Fila + Agility",12:"Frei",13:"Berg 50 min · 8 km",14:"Fitti",15:"Frei",16:"Long mit Fila 90 min · 14 km",17:"Fitti",18:"Easy mit Fila + Agility",19:"Frei",20:"Tempo 40 min · 7 km",21:"Fitti",22:"Frei",23:"Long mit Fila 75 min · 250 hm",24:"Fitti",25:"Easy mit Fila + Agility",26:"Frei",27:"Berg 60 min · 10 km",28:"Fitti",29:"Frei",30:"Long mit Fila 75 min · 300 hm",31:"Fitti"},
+  9:{1:"Easy mit Fila + Agility",2:"Frei",3:"Tempo 35 min · 6 km",4:"Frei",5:"Agility Tübingen",6:"Agility Tübingen",7:"Fitti",8:"Easy mit Fila + Agility",9:"Frei",10:"Berg 60 min · 10 km, 350 hm",11:"Fitti",12:"Frei",13:"Long mit Fila 90 min · 14 km",14:"Fitti",15:"Easy mit Fila + Agility",16:"Frei",17:"Tempo 40 min · 7 km",18:"Frei",19:"Agility Herbolzheim",20:"Agility Herbolzheim",21:"Frei",22:"Easy mit Fila + Agi kurz",23:"Fitti leicht (nur Hüfte)",24:"Frei",25:"Shakeout 20 min · 3 Steigerungen",26:"REIT IM WINKL 11 km mit Fila / 300 hm",27:"Frei",28:"Frei",29:"Easy 30 + Agility",30:"Fitti leicht (nur Hüfte)"},
+  10:{1:"Frei",2:"Shakeout 20 min · 3 Steigerungen",3:"BODENHÄUSLE 14 km / 610 hm",4:"Frei"}
+};
+
+const MEALS = {
+  fr:[
+    {n:"Overnight Oats mit Beeren",g:"60 g Haferflocken · 150 g Beeren · 15 g Leinsamen · 200 ml Pflanzendrink"},
+    {n:"Vollkorn-Porridge mit Apfel",g:"60 g Haferflocken · 1 Apfel (130 g) · 250 ml Pflanzendrink · Zimt"},
+    {n:"Soja-Skyr mit Granola & Banane",g:"200 g Soja-Skyr · 50 g Granola · 1 Banane (120 g)"},
+    {n:"Avocado-Vollkornbrot",g:"2 Scheiben Brot (100 g) · ½ Avocado (75 g) · Kresse · Zitrone"},
+    {n:"Chia-Pudding mit Mango",g:"30 g Chiasamen · 200 ml Pflanzendrink · 150 g Mango"},
+    {n:"Smoothie-Bowl",g:"40 g Haferflocken · 1 Banane (120 g) · 100 g Beeren · 150 ml Pflanzendrink"}
+  ],
+  mi:[
+    {n:"Kichererbsen-Bowl mit Quinoa",g:"120 g Kichererbsen (gekocht) · 80 g Quinoa (roh) · ½ Avocado (75 g) · 100 g Gurke"},
+    {n:"Buddha-Bowl mit Tofu",g:"150 g Tofu · 80 g Reis · 60 g Edamame · 100 g Karotte"},
+    {n:"Süßkartoffel-Curry mit Kichererbsen",g:"250 g Süßkartoffel · 120 g Kichererbsen · 100 ml Kokosmilch · 75 g Reis"},
+    {n:"Couscous-Salat mit Ofengemüse",g:"80 g Couscous · 250 g Gemüse · 30 g Feta-Alternative · Kräuter"},
+    {n:"Vollkornnudeln mit Tomaten-Gemüse-Sugo",g:"100 g Vollkornnudeln · 200 g Passata · 150 g Gemüse · 50 g Zwiebel"},
+    {n:"Falafel-Wrap mit Hummus",g:"4 Falafel (120 g) · 1 Wrap (60 g) · 40 g Hummus · 80 g Salat"}
+  ],
+  ab:[
+    {n:"Ofengemüse mit Hummus",g:"300 g Gemüse · 60 g Hummus · 1 Scheibe Vollkornbrot (50 g)"},
+    {n:"Gebratener Tofu mit Brokkoli",g:"150 g Tofu · 150 g Brokkoli · 75 g Reis · Sojasauce"},
+    {n:"Gefüllte Paprika mit Quinoa",g:"2 Paprika (300 g) · 70 g Quinoa · 80 g Kidneybohnen"},
+    {n:"Zucchini-Nudeln mit Pesto",g:"300 g Zucchini · 40 g Kichererbsen-Pesto · 30 g Pinienkerne"},
+    {n:"Zitronen-Pasta mit Cherrytomaten & Rucola",g:"100 g Pasta · 150 g Cherrytomaten · 30 g Rucola · 20 g Pinienkerne · 1 Zitrone"},
+    {n:"Flammkuchen mit Kürbis & Walnüssen",g:"1 Flammkuchenboden (120 g) · 150 g Kürbis · 20 g Walnüsse · 30 g Rucola · 40 g Ziegenkäse (optional) · Honig"}
+  ]
+};
+
+const RACES=[
+  {d:"12.07.2026",w:"Sonntag",n:"Rosskopflauf",info:"18,5 km · 560 hm"},
+  {d:"25.07.2026",w:"Samstag",n:"Totemann Berglauf Oberried",info:"10,4 km · 750 hm"},
+  {d:"26.09.2026",w:"Samstag",n:"Mountainman Reit im Winkl (mit Fila)",info:"11 km · ~300 hm"},
+  {d:"03.10.2026",w:"Samstag",n:"Bodenhäusle Trail Elzach",info:"14 km · 610 hm"}
+];
+const HUEFT=["Hip Thrust 3×10–12","Side-lying Hip Abduction 2×12 pro Seite","Clamshells mit Band 2×15 pro Seite","Deadbug 2×8 pro Seite","Hip Flexor Stretch 60 Sek. pro Seite","Piriformis-Stretch 45 Sek. pro Seite"];
+
+const DOW=["Sonntag","Montag","Dienstag","Mittwoch","Donnerstag","Freitag","Samstag"];
+const DOWS=["So","Mo","Di","Mi","Do","Fr","Sa"];
+const MON=["Januar","Februar","März","April","Mai","Juni","Juli","August","September","Oktober","November","Dezember"];
+const YEAR=2026;
+const SLOTS=['07:30','09:00','12:30','14:00','17:30','19:30','23:00'];
+
+let now=new Date();
+let cur={m: now.getFullYear()===YEAR ? now.getMonth()+1 : 6, d: now.getFullYear()===YEAR ? now.getDate() : 9};
+let viewMonth=cur.m, tMonth=cur.m;
+let mealOffset=parseInt(load('mt_mealoffset','0'),10)||0;
+
+function load(k,def){ try{ return localStorage.getItem(k) ?? def; }catch(e){ return def; } }
+function save(k,v){ try{ localStorage.setItem(k,v); }catch(e){} }
+function getOv(){ try{ return JSON.parse(localStorage.getItem('mt_ov')||'{}'); }catch(e){ return {}; } }
+function setOv(o){ save('mt_ov',JSON.stringify(o)); }
+function key(m,d){ return YEAR+'-'+m+'-'+d; }
+function meal(c,d){ const a=MEALS[c]; return a[((d-1)+mealOffset)%a.length]; }
+function slotOf(t){ let s=0; for(let i=0;i<SLOTS.length;i++){ if(t>=SLOTS[i]) s=i; } return s; }
+
+function classify(act,m){
+  const r={items:[],remMorgen:false,remMittag:false,remAbend:false,fitti:false,rest:false};
+  if(/^frei/i.test(act)){ r.rest=true; if(/biken/i.test(act)) r.items.push({t:'14:00',l:'Biken Borderline',c:'sport',sub:'ab 14:00'}); return r; }
+  const summer=m>=4&&m<=9, fila=/fila/i.test(act);
+  if(/^[A-ZÄÖÜ]{3,}/.test(act)&&/km|k\b/i.test(act)){ r.items.push({t:'09:30',l:act,c:'race',sub:'Startzeit noch offen'}); return r; }
+  if(/fitti/i.test(act)){ r.fitti=true; r.items.push({t:'13:00',l:act,c:'fitti',sub:'13:00–14:00'}); return r; }
+  if(/beach|community/i.test(act)){ r.items.push({t:'18:00',l:act,c:'beach',sub:'ab 18:00'}); return r; }
+  if(/agilit|agi /i.test(act)){
+    r.remAbend=true;
+    if(/^agility /i.test(act)){ r.items.push({t:'10:00',l:act,c:'agilityW',sub:'Turnier · Zeit noch offen'}); }
+    else {
+      const al=/^nur agility/i.test(act)?act:'Agility mit Fila';
+      r.items.push({t:'17:30',l:al+' (16–18 Uhr)',c:'agilityT'});
+      if(/easy/i.test(act)) r.items.push({t:'20:30',l:'Easy Lauf',c:'sport',sub:'ab 20:30'});
+    }
+    return r;
+  }
+  const isLong=/long/i.test(act), isBerg=/berg|hügel/i.test(act);
+  if(fila){
+    if(summer){ r.remMorgen=true; r.items.push({t:'07:45',l:act,c:isBerg?'berg':'sport',sub:'ab 07:45'}); }
+    else { r.remMittag=true; r.items.push({t:'12:30',l:act,c:isBerg?'berg':'sport',sub:'ab 12:30'}); }
+    return r;
+  }
+  const tt=isLong?'09:30':'18:00';
+  r.items.push({t:tt,l:act,c:isBerg?'berg':'sport',sub:'ab '+tt});
+  return r;
+}
+
+function buildFlat(m,d){
+  const dow=new Date(YEAR,m-1,d).getDay(), weekend=dow===0||dow===6;
+  const act=(PLAN[m]||{})[d]||null;
+  const c=act?classify(act,m):{items:[],remMorgen:false,remMittag:false,remAbend:false,fitti:false,rest:false};
+  const fr=meal('fr',d), mi=meal('mi',d), ab=meal('ab',d);
+  const comp=c.items.find(x=>x.c==='race'||x.c==='agilityW');
+  if(comp){ return [{t:'09:00',l:'Frühstück: Toast mit Erdnussbutter & Marmelade',c:'essen'}, comp]; }
+  let it=[];
+  it.push({t:'07:30',l:'Aufstehen',c:'aufstehen'});
+  if(!c.remMorgen) it.push({t:'07:45',l:'Morgenrunde mit Fila',c:'fila'});
+  it.push({t:'09:00',l:'Frühstück: '+fr.n,c:'essen'});
+  if(!weekend) it.push({t:'09:15',l:'Deep Work – Vormittag',c:'deepwork'});
+  if(!c.remMittag) it.push({t:'12:30',l:'Mittagsrunde mit Fila',c:'fila'});
+  it.push({t:'14:00',l:'Mittagessen: '+mi.n,c:'essen'});
+  if(!weekend) it.push({t:'14:31',l:'Arbeiten – Nachmittag',c:'arbeit'});
+  if(!c.remAbend) it.push({t:'17:30',l:'Abendrunde mit Fila',c:'fila'});
+  it.push({t:'19:30',l:'Abendessen: '+ab.n,c:'essen'});
+  it.push({t:'23:00',l:'Schlafenszeit',c:'schlaf'});
+  c.items.forEach(x=> it.push(x));
+  it.sort((a,b)=> a.t.localeCompare(b.t));
+  return it;
+}
+function genGroups(m,d){ const flat=buildFlat(m,d); const g=SLOTS.map(()=>[]); flat.forEach(it=> g[slotOf(it.t)].push(it)); return g; }
+function effective(m,d){ const ov=getOv(),k=key(m,d); return ov[k]?ov[k]:genGroups(m,d); }
+function ensureOv(m,d){ const ov=getOv(),k=key(m,d); if(!ov[k]){ ov[k]=genGroups(m,d); setOv(ov); } return ov; }
+
+function sportSummary(m,d){
+  const act=(PLAN[m]||{})[d]; if(!act) return null;
+  if(/^frei/i.test(act)) return {rest:true,label:'Trainingsfrei – Ruhetag',cat:'frei'};
+  const c=classify(act,m); const main=c.items.find(x=>x.c!=='essen')||c.items[0];
+  if(!main) return null;
+  return {rest:false,label:act,cat:main.c,time:main.t};
+}
+function fmtDate(m,d){ return d+'. '+MON[m-1]; }
+function isToday(m,d){ return now.getFullYear()===YEAR&&now.getMonth()+1===m&&now.getDate()===d; }
+function isSel(m,d){ return cur.m===m&&cur.d===d; }
+
+function renderStrip(){
+  document.getElementById('stripMonth').textContent=MON[viewMonth-1]+' '+YEAR;
+  const s=document.getElementById('strip'); s.innerHTML='';
+  const dim=new Date(YEAR,viewMonth,0).getDate();
+  for(let d=1;d<=dim;d++){
+    const dt=new Date(YEAR,viewMonth-1,d), ss=sportSummary(viewMonth,d);
+    const chip=document.createElement('div');
+    chip.className='chip'+(isSel(viewMonth,d)?' sel':'')+(isToday(viewMonth,d)&&!isSel(viewMonth,d)?' today':'');
+    const dotc=ss&&!ss.rest?(CAT[ss.cat]||CAT.sonstiges).bg:'transparent';
+    chip.innerHTML='<div class="cw">'+DOWS[dt.getDay()]+'</div><div class="cd">'+d+'</div><div class="cdot" style="background:'+dotc+'"></div>';
+    chip.addEventListener('click',()=>{ cur={m:viewMonth,d:d}; renderStrip(); renderDay(); });
+    s.appendChild(chip);
+  }
+  const sel=s.querySelector('.chip.sel'); if(sel) sel.scrollIntoView({inline:'center',block:'nearest'});
+}
+
+let uidMap={}, uidC=0;
+function renderDay(){
+  document.getElementById('hDow').textContent=DOW[new Date(YEAR,cur.m-1,cur.d).getDay()];
+  document.getElementById('hDate').textContent=fmtDate(cur.m,cur.d);
+  document.getElementById('hPill').classList.toggle('hidden',!isToday(cur.m,cur.d));
+
+  const ss=sportSummary(cur.m,cur.d), hs=document.getElementById('hSport');
+  if(ss){ const cc=CAT[ss.cat];
+    const badge=ss.rest?'Heute':(ss.cat==='race'?'Wettkampf':ss.cat==='agilityW'?'Turnier':'Training'+(ss.time?' '+ss.time:''));
+    hs.innerHTML='<div class="sportbox" style="background:'+cc.bg+'; color:'+cc.fg+'"><div class="si">'+svg(cc.ic,cc.fg,20)+'</div>'+
+      '<div><p class="sl">'+badge+'</p><p class="st">'+ss.label+'</p></div></div>';
+  } else hs.innerHTML='';
+
+  const groups=effective(cur.m,cur.d), tl=document.getElementById('timeline'); tl.innerHTML='';
+  uidMap={}; uidC=0;
+  groups.forEach((g,si)=>{
+    const slot=document.createElement('div'); slot.className='slot';
+    const st=document.createElement('div'); st.className='stime'; st.textContent=SLOTS[si];
+    const sg=document.createElement('div'); sg.className='sgroup'; sg.dataset.slot=si;
+    g.forEach((it,ii)=>{
+      const cc=CAT[it.c]||CAT.sonstiges;
+      const uid=uidC++; uidMap[uid]=it;
+      const tile=document.createElement('div'); tile.className='tile'+(it.done?' done':'');
+      tile.style.background=cc.bg; tile.style.color=cc.fg; tile.dataset.uid=uid; tile.dataset.slot=si; tile.dataset.idx=ii;
+      tile.innerHTML='<div class="ticon">'+svg(cc.ic,cc.fg,18)+'</div>'+
+        '<div class="tbody"><div class="tlabel">'+it.l+'</div>'+(it.sub?'<div class="tsub">'+it.sub+'</div>':'')+'</div>'+
+        '<div class="thandle">'+svg('grip',cc.fg,20)+'</div>';
+      const handle=tile.querySelector('.thandle');
+      tile.addEventListener('click',()=>{ if(window._sup){window._sup=false;return;} toggleDone(+tile.dataset.slot,+tile.dataset.idx); });
+      handle.addEventListener('click',e=>e.stopPropagation());
+      handle.addEventListener('pointerdown',e=>onHandleDown(e,tile));
+      sg.appendChild(tile);
+    });
+    slot.appendChild(st); slot.appendChild(sg); tl.appendChild(slot);
+  });
+}
+
+function toggleDone(si,ii){ const ov=ensureOv(cur.m,cur.d),k=key(cur.m,cur.d); ov[k][si][ii].done=!ov[k][si][ii].done; setOv(ov); renderDay(); }
+
+let drag={el:null,moved:false,active:false,startY:0};
+function onHandleDown(e,tile){
+  e.preventDefault(); e.stopPropagation();
+  drag.el=tile; drag.moved=false; drag.active=false; drag.startY=e.clientY;
+  window.addEventListener('pointermove',onPMove);
+  window.addEventListener('pointerup',onPUp,{once:true});
+}
+function onPMove(e){
+  if(!drag.el) return;
+  if(!drag.active){ if(Math.abs(e.clientY-drag.startY)<8) return; drag.active=true; drag.el.classList.add('dragging'); }
+  e.preventDefault(); drag.moved=true;
+  const sgs=[...document.querySelectorAll('.sgroup')]; let target=null;
+  for(const g of sgs){ const r=g.getBoundingClientRect(); if(e.clientY>=r.top-6&&e.clientY<=r.bottom+6){ target=g; break; } }
+  if(!target){ let best=null; sgs.forEach(g=>{ const r=g.getBoundingClientRect(); const dst=Math.abs(e.clientY-(r.top+r.bottom)/2); if(!best||dst<best.d) best={g,d:dst}; }); target=best.g; }
+  const rows=[...target.querySelectorAll('.tile')].filter(r=>r!==drag.el); let ref=null;
+  for(const r of rows){ const rect=r.getBoundingClientRect(); if(e.clientY<rect.top+rect.height/2){ ref=r; break; } }
+  if(ref) target.insertBefore(drag.el,ref); else target.appendChild(drag.el);
+}
+function onPUp(){
+  window.removeEventListener('pointermove',onPMove);
+  if(!drag.el) return;
+  const tile=drag.el;
+  tile.classList.remove('dragging');
+  if(drag.active&&drag.moved){ commitOrder(); window._sup=true; setTimeout(()=>window._sup=false,350); }
+  else { openModal(+tile.dataset.slot,+tile.dataset.idx); }
+  drag.el=null; drag.active=false;
+}
+function commitOrder(){
+  const sgs=[...document.querySelectorAll('.sgroup')];
+  const ng=sgs.map(g=> [...g.querySelectorAll('.tile')].map(t=> uidMap[t.dataset.uid]));
+  const ov=getOv(); ov[key(cur.m,cur.d)]=ng; setOv(ov); renderDay();
+}
+
+let editSlot=-1, editIdx=-1;
+function openModal(si,ii){
+  editSlot=si; editIdx=ii; ensureOv(cur.m,cur.d);
+  document.getElementById('modalTitle').textContent=ii>=0?'Aktivität bearbeiten':'Aktivität hinzufügen';
+  document.getElementById('mDel').classList.toggle('hidden',ii<0);
+  if(ii>=0){ const it=getOv()[key(cur.m,cur.d)][si][ii];
+    document.getElementById('fLabel').value=it.l; document.getElementById('fTime').value=it.t||SLOTS[si]; document.getElementById('fCat').value=it.c||'sonstiges';
+  } else { document.getElementById('fLabel').value=''; document.getElementById('fTime').value='12:00'; document.getElementById('fCat').value='sonstiges'; }
+  document.getElementById('overlay').classList.add('show');
+}
+function closeModal(){ document.getElementById('overlay').classList.remove('show'); }
+document.getElementById('mSave').addEventListener('click',()=>{
+  const ov=ensureOv(cur.m,cur.d), k=key(cur.m,cur.d);
+  const t=document.getElementById('fTime').value||'12:00';
+  const item={t:t,l:document.getElementById('fLabel').value.trim()||'Aktivität',c:document.getElementById('fCat').value};
+  if(editIdx>=0){ const old=ov[k][editSlot][editIdx]; item.done=old.done; item.sub=old.sub; ov[k][editSlot][editIdx]=item; }
+  else { const si=slotOf(t); ov[k][si].push(item); ov[k][si].sort((a,b)=>(a.t||'').localeCompare(b.t||'')); }
+  setOv(ov); closeModal(); renderDay();
+});
+document.getElementById('mDel').addEventListener('click',()=>{ const ov=ensureOv(cur.m,cur.d),k=key(cur.m,cur.d); if(editIdx>=0){ ov[k][editSlot].splice(editIdx,1); setOv(ov); } closeModal(); renderDay(); });
+document.getElementById('mCancel').addEventListener('click',closeModal);
+document.getElementById('overlay').addEventListener('click',e=>{ if(e.target.id==='overlay') closeModal(); });
+
+document.getElementById('addBtn').addEventListener('click',()=>openModal(0,-1));
+document.getElementById('resetBtn').addEventListener('click',()=>{ const ov=getOv(); delete ov[key(cur.m,cur.d)]; setOv(ov); renderDay(); });
+document.getElementById('editBtn').addEventListener('click',function(){ document.body.classList.toggle('editing');
+  const on=document.body.classList.contains('editing');
+  this.style.background=on?'var(--teal)':'var(--card)'; this.innerHTML=svg('pencil',on?'#fff':'#26261F',18);
+});
+document.getElementById('prevDay').addEventListener('click',()=>shiftDay(-1));
+document.getElementById('nextDay').addEventListener('click',()=>shiftDay(1));
+function shiftDay(n){ const dt=new Date(YEAR,cur.m-1,cur.d+n); cur={m:dt.getMonth()+1,d:dt.getDate()}; viewMonth=cur.m; renderStrip(); renderDay(); }
+document.getElementById('prevMonth').addEventListener('click',()=>{ if(viewMonth>1){viewMonth--; renderStrip();} });
+document.getElementById('nextMonth').addEventListener('click',()=>{ if(viewMonth<12){viewMonth++; renderStrip();} });
+
+function renderTraining(){
+  const rl=document.getElementById('raceList'); rl.innerHTML='';
+  RACES.forEach(r=>{ const e=document.createElement('div'); e.className='racecard';
+    e.innerHTML='<div class="ri">'+svg('trophy','#ffffff',18)+'</div><div><p class="rn">'+r.n+'</p><p class="rd">'+r.w+', '+r.d+' · '+r.info+'</p></div>'; rl.appendChild(e); });
+  document.getElementById('tMonthTitle').textContent='Training · '+MON[tMonth-1];
+  const tlst=document.getElementById('trainList'); tlst.innerHTML='';
+  const pm=PLAN[tMonth]||{}; const days=Object.keys(pm).map(Number).sort((a,b)=>a-b); let any=false;
+  days.forEach(d=>{ const act=pm[d]; if(/^frei/i.test(act)) return; any=true;
+    const row=document.createElement('div'); row.className='ti2';
+    row.innerHTML='<span class="td">'+DOWS[new Date(YEAR,tMonth-1,d).getDay()]+' '+d+'.</span><span>'+act+'</span>'; tlst.appendChild(row); });
+  if(!any) tlst.innerHTML='<p class="hinttext">Kein Training in diesem Monat hinterlegt.</p>';
+  const ex=document.getElementById('exList'); ex.innerHTML=''; HUEFT.forEach(h=>{ const li=document.createElement('li'); li.textContent=h; ex.appendChild(li); });
+}
+document.getElementById('prevTMonth').addEventListener('click',()=>{ if(tMonth>1){tMonth--; renderTraining();} });
+document.getElementById('nextTMonth').addEventListener('click',()=>{ if(tMonth<12){tMonth++; renderTraining();} });
+
+let calMonth=cur.m;
+function renderCal(){
+  document.getElementById('calTitle').textContent=MON[calMonth-1]+' '+YEAR;
+  const g=document.getElementById('calGrid'); g.innerHTML='';
+  const first=(new Date(YEAR,calMonth-1,1).getDay()+6)%7, dim=new Date(YEAR,calMonth,0).getDate();
+  for(let i=0;i<first;i++) g.appendChild(document.createElement('span'));
+  for(let d=1;d<=dim;d++){
+    const ss=sportSummary(calMonth,d);
+    const cell=document.createElement('div');
+    cell.className='cell'+(isSel(calMonth,d)?' sel':'')+(isToday(calMonth,d)&&!isSel(calMonth,d)?' today':'');
+    const dotc=ss&&!ss.rest?(CAT[ss.cat]||CAT.sonstiges).bg:'transparent';
+    cell.innerHTML='<span>'+d+'</span><span class="cdot" style="background:'+dotc+'"></span>';
+    cell.addEventListener('click',()=>{ cur={m:calMonth,d:d}; viewMonth=calMonth; switchView('Main'); });
+    g.appendChild(cell);
+  }
+}
+document.getElementById('prevCal').addEventListener('click',()=>{ if(calMonth>1){calMonth--; renderCal();} });
+document.getElementById('nextCal').addEventListener('click',()=>{ if(calMonth<12){calMonth++; renderCal();} });
+
+function renderMeals(){
+  const ml=document.getElementById('mealList'); ml.innerHTML='';
+  const defs=[['Frühstück','fr','#FAEEDA','#854F0B','sunrise'],['Mittag','mi','#EAF3DE','#3B6D11','bowl'],['Abend','ab','#E6F1FB','#0C447C','moon']];
+  defs.forEach(x=>{ const m=meal(x[1],cur.d); const e=document.createElement('div'); e.className='mealrow'; e.style.background=x[2]+'55';
+    e.innerHTML='<div class="mi" style="background:'+x[2]+'">'+svg(x[4],x[3],16)+'</div><div><p class="ml">'+x[0]+'</p><p class="mn">'+m.n+'</p><p class="mg">'+m.g+'</p></div>'; ml.appendChild(e); });
+}
+document.getElementById('rotateBtn').addEventListener('click',()=>{ mealOffset++; save('mt_mealoffset',String(mealOffset)); renderMeals(); renderDay(); });
+
+function switchView(v){
+  document.getElementById('viewMain').classList.toggle('hidden',v!=='Main');
+  document.getElementById('viewTraining').classList.toggle('hidden',v!=='Training');
+  document.getElementById('viewCal').classList.toggle('hidden',v!=='Cal');
+  document.getElementById('viewMeals').classList.toggle('hidden',v!=='Meals');
+  document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('on',t.dataset.v===v));
+  if(v==='Main'){ renderStrip(); renderDay(); }
+  if(v==='Training'){ tMonth=cur.m; renderTraining(); }
+  if(v==='Cal'){ calMonth=cur.m; renderCal(); }
+  if(v==='Meals') renderMeals();
+}
+document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>switchView(t.dataset.v)));
+
+function initIcons(){
+  document.getElementById('prevMonth').innerHTML=svg('chevL','#26261F',18);
+  document.getElementById('nextMonth').innerHTML=svg('chevR','#26261F',18);
+  document.getElementById('prevDay').innerHTML=svg('chevL','#26261F',18);
+  document.getElementById('nextDay').innerHTML=svg('chevR','#26261F',18);
+  document.getElementById('editBtn').innerHTML=svg('pencil','#26261F',18);
+  document.getElementById('prevTMonth').innerHTML=svg('chevL','#26261F',18);
+  document.getElementById('nextTMonth').innerHTML=svg('chevR','#26261F',18);
+  document.getElementById('prevCal').innerHTML=svg('chevL','#26261F',18);
+  document.getElementById('nextCal').innerHTML=svg('chevR','#26261F',18);
+  document.getElementById('addBtn').innerHTML=svg('plus','#0F6E56',18)+' Aktivität hinzufügen';
+  document.getElementById('resetBtn').innerHTML=svg('reset','#76746C',16)+' Tag auf Plan zurücksetzen';
+  document.getElementById('rotateBtn').innerHTML=svg('refresh','#26261F',16)+' Andere Vorschläge';
+  const tic=document.querySelectorAll('.tab .tabic');
+  tic[0].innerHTML=svg('list','currentColor',21); tic[1].innerHTML=svg('run','currentColor',21); tic[2].innerHTML=svg('month','currentColor',21); tic[3].innerHTML=svg('salad','currentColor',21);
+}
+
+initIcons(); renderStrip(); renderDay();
+</script>
+</body>
+</html>
